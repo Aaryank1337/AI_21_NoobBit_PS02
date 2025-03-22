@@ -3,13 +3,12 @@ import api from '../lib/axios'; // Import the axios instance
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([
-    { type: 'bot', text: "Hello! I'm your DOME: Dynamic Operational Management Engine , Your assistant. How can I help you today?" }
+    { type: 'bot', text: "Hello! I'm your DOME: Dynamic Operational Management Engine, Your assistant. How can I help you today?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const endOfMessagesRef = useRef(null);
 
-  // Auto-scroll to bottom of messages
   useEffect(() => {
     endOfMessagesRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -26,7 +25,6 @@ const ChatInterface = () => {
     setIsLoading(true);
     
     try {
-      // Send message to backend using axios
       const response = await api.post('/api/query', { message: input });
       
       setTimeout(() => {
@@ -35,7 +33,7 @@ const ChatInterface = () => {
           { 
             type: 'bot', 
             text: response.data.response,
-            source: response.data.source // 'knowledge_base' or 'llm'
+            source: response.data.source 
           }
         ]);
         setIsLoading(false);
@@ -61,35 +59,29 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">
-        <h2>DOME</h2>
+    <div className="flex flex-col flex-1 border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+      <div className="bg-gray-800 text-white p-4 text-center font-semibold">
+        DOME Chat Assistant
       </div>
-      
-      <div className="messages-container">
+      <div className="flex-1 overflow-y-auto p-4 bg-gray-100">
         {messages.map((message, index) => (
-          <div key={index} className={`message ${message.type}`}>
-            <div className="message-content">
+          <div key={index} className={`flex mb-3 ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+            <div className={`p-3 rounded-lg ${message.type === 'user' ? 'bg-gray-800 text-white rounded-br-none' : 'bg-blue-100 text-gray-900 rounded-bl-none'} max-w-md`}>
               {message.text}
               {message.source === 'knowledge_base' && (
-                <span className="source-badge">FAQ</span>
+                <span className="text-xs bg-blue-500 text-white px-2 py-1 ml-2 rounded-full">FAQ</span>
               )}
             </div>
           </div>
         ))}
-        
         {isLoading && (
-          <div className="message bot">
-            <div className="loading-indicator">
-              <span></span><span></span><span></span>
-            </div>
+          <div className="flex justify-start">
+            <div className="p-3 rounded-lg bg-blue-100 text-gray-900 animate-pulse">Typing...</div>
           </div>
         )}
-        
         <div ref={endOfMessagesRef} />
       </div>
-      
-      <div className="input-container">
+      <div className="flex p-4 bg-white border-t border-gray-300">
         <input
           type="text"
           value={input}
@@ -97,10 +89,12 @@ const ChatInterface = () => {
           onKeyPress={handleKeyPress}
           placeholder="Ask something about IDMS ERP..."
           disabled={isLoading}
+          className="flex-1 p-2 border rounded-full outline-none focus:ring-2 focus:ring-gray-600"
         />
-        <button 
+        <button
           onClick={handleSendMessage}
           disabled={isLoading || input.trim() === ''}
+          className="ml-2 px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 disabled:bg-gray-400"
         >
           Send
         </button>

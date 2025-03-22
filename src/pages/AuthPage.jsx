@@ -1,12 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import api from "../lib/axios.js"; // Import axios instance
+import { useAuth } from "../context/AuthContext";
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
   const { register, handleSubmit, reset } = useForm();
   const navigate = useNavigate();
+  const { signIn } = useAuth();
 
   const onSubmit = async (data) => {
     console.log(isLogin ? "Logging in with" : "Signing up with", data);
@@ -14,11 +16,15 @@ export default function AuthPage() {
 
     try {
       const res = await api.post(endpoint, data);
-      localStorage.setItem("token", res.data.token);
+      // Use the signIn function to store token and update user in context
+      signIn(res.data.token);
       console.log("Authentication successful, token stored!");
       navigate("/home");
     } catch (error) {
-      console.error("Authentication failed:", error.response?.data?.error || error.message);
+      console.error(
+        "Authentication failed:",
+        error.response?.data?.error || error.message
+      );
     }
     reset();
   };
@@ -32,7 +38,10 @@ export default function AuthPage() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {!isLogin && (
             <div>
-              <label htmlFor="role" className="block font-medium text-gray-700">
+              <label
+                htmlFor="role"
+                className="block font-medium text-gray-700"
+              >
                 Role
               </label>
               <select
@@ -46,7 +55,10 @@ export default function AuthPage() {
             </div>
           )}
           <div>
-            <label htmlFor="email" className="block font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -57,7 +69,10 @@ export default function AuthPage() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block font-medium text-gray-700"
+            >
               Password
             </label>
             <input
