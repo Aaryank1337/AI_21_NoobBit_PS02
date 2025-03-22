@@ -13,6 +13,7 @@ import dispatchRoutes from "./routes/dispatch_routes.js";
 import { issueToken } from "./middleware/authMiddleware.js";
 import whatsappRoutes from "./routes/whatsapp_routes.js"
 import userRoutes from "./routes/auth_route.js"
+import logRoutes from "./routes/log_route.js"
 
 
 // Initialize Express app
@@ -42,6 +43,8 @@ app.use("/api/production", productionRoutes);
 app.use("/api/quality", qualityRoutes);
 app.use("/api/dispatch", dispatchRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/logs', logRoutes);
+
 
 // OAuth2 Token Issuance (For Testing)
 app.get("/auth/token", issueToken);

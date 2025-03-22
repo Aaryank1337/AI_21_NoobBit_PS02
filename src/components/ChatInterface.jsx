@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import api from '../lib/axios'; // Import the axios instance
+import { useAuth } from '../context/AuthContext';
 
 const ChatInterface = () => {
+  const { user } = useAuth();  
   const [messages, setMessages] = useState([
     { type: 'bot', text: "Hello! I'm your DOME: Dynamic Operational Management Engine, Your assistant. How can I help you today?" }
   ]);
@@ -13,34 +15,91 @@ const ChatInterface = () => {
     endOfMessagesRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Function to log events using the general log model
+  const logEvent = async (logData) => {
+    try {
+      await api.post('/api/logs', logData);
+    } catch (err) {
+      console.error('Error logging event:', err);
+    }
+  };
+
   const handleInputChange = (e) => {
     setInput(e.target.value);
   };
 
   const handleSendMessage = async () => {
     if (input.trim() === '') return;
-    
+
+    const userId = user ? user.email || user.id || "unknown" : "unknown";
+
+    // Log the user's query
+    const userLog = {
+      timestamp: new Date().toISOString(),
+      user_id: userId,
+      category: "Chatbot",
+      event: "User Query",
+      details: {
+        query: input
+      }
+    };
+    logEvent(userLog);
+
+    // Add user message to chat
     setMessages([...messages, { type: 'user', text: input }]);
+    const userQuery = input; // Capture the query for further logging
     setInput('');
     setIsLoading(true);
-    
+
     try {
-      const response = await api.post('/api/query', { message: input });
+      // Send the query to the backend
+      const response = await api.post('/api/query', { message: userQuery });
       
       setTimeout(() => {
+        // Create bot message
+        const botMessage = { 
+          type: 'bot', 
+          text: response.data.response,
+          source: response.data.source 
+        };
+
+        // Log the bot response along with the original query
+        const botLog = {
+          timestamp: new Date().toISOString(),
+          user_id: userId,
+          category: "Chatbot",
+          event: "Bot Response",
+          details: {
+            query: userQuery,
+            response: response.data.response,
+            source: response.data.source
+          }
+        };
+        logEvent(botLog);
+
         setMessages(prevMessages => [
           ...prevMessages, 
-          { 
-            type: 'bot', 
-            text: response.data.response,
-            source: response.data.source 
-          }
+          botMessage
         ]);
         setIsLoading(false);
       }, 500);
       
     } catch (error) {
       console.error('Error sending message:', error);
+
+      // Log the error event along with the query
+      const errorLog = {
+        timestamp: new Date().toISOString(),
+        user_id: userId,
+        category: "Chatbot",
+        event: "Error",
+        details: {
+          query: userQuery,
+          error: error.message
+        }
+      };
+      logEvent(errorLog);
+
       setMessages(prevMessages => [
         ...prevMessages, 
         { 

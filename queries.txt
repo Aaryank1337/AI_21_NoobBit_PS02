@@ -22,3 +22,42 @@ roduction: "What is the status of production batches?"
 Quality: "List all quality inspections."
 
 Dispatch: "What's the status of shipments?"
+
+Below are several example queries you might ask ChatGPT to interact with your JSON-based database. These queries are designed to help you retrieve, filter, and analyze the data stored in your different collections:
+
+### Shipments
+- **Query:** "Show me all shipments with the status 'In Transit'."
+- **Query:** "List all shipments dispatched via FedEx."
+- **Query:** "Retrieve the shipment details for dispatch ID 'DISP-789'."
+
+### Batch Cards
+- **Query:** "List all batch cards where the status is 'In Progress'."
+- **Query:** "Find batch cards that used raw material SKU 'RM-101' and show the quantity used."
+- **Query:** "Display all batch cards along with their raw materials and statuses."
+
+### Suppliers and Purchase Orders
+- **Query:** "Retrieve all suppliers along with their associated purchase orders."
+- **Query:** "List all purchase orders with the status 'Pending Approval'."
+- **Query:** "Find the purchase order details for PO number 'PO-2023-005'."
+
+### Inspections
+- **Query:** "Show me all inspections with a status of 'Passed'."
+- **Query:** "Retrieve inspection details for batch number 'BPC-123'."
+- **Query:** "List all inspection records and their corresponding batch numbers."
+
+### Customers and Sales Orders
+- **Query:** "List all customers with a credit limit above 60000."
+- **Query:** "Retrieve sales orders for customer 'CUST-1001' that are 'Pending Dispatch'."
+- **Query:** "Display all sales orders along with their associated customer details."
+
+### Inventory
+- **Query:** "Show me the inventory details for the stock location 'Mumbai'."
+- **Query:** "List all inventory items where SKU starts with 'RM'."
+- **Query:** "Retrieve the current quantity of SKU 'SKU-500' in inventory."
+
+### Logs
+- **Query:** "List all log entries for category 'Chatbot' and event 'User Query'."
+- **Query:** "Retrieve logs for user 'test@example.com' that resulted in errors."
+- **Query:** "Show me the most recent logs where the event was 'Bot Response'."
+
+These queries can be tailored based on your needs, and they assume that ChatGPT understands your database structure. You can further refine them by combining filters or asking for aggregations (e.g., count, average) if needed.

@@ -1,12 +1,41 @@
 {
-    "batch_cards": [
-      {
-        "batch_number": "BPC-123",
-        "raw_materials": [
-          { "sku": "RM-100", "quantity_used": 200 }
-        ],
-        "status": "In Progress"
-      }
-    ]
-  }
-  
+  "batch_cards": [
+    {
+      "batch_number": "BPC-123",
+      "raw_materials": [
+        { "sku": "RM-100", "quantity_used": 200 }
+      ],
+      "status": "In Progress"
+    },
+    {
+      "batch_number": "BPC-124",
+      "raw_materials": [
+        { "sku": "RM-101", "quantity_used": 150 },
+        { "sku": "RM-102", "quantity_used": 100 }
+      ],
+      "status": "Completed"
+    },
+    {
+      "batch_number": "BPC-125",
+      "raw_materials": [
+        { "sku": "RM-103", "quantity_used": 300 }
+      ],
+      "status": "Pending Approval"
+    },
+    {
+      "batch_number": "BPC-126",
+      "raw_materials": [
+        { "sku": "RM-104", "quantity_used": 250 },
+        { "sku": "RM-105", "quantity_used": 50 }
+      ],
+      "status": "On Hold"
+    },
+    {
+      "batch_number": "BPC-127",
+      "raw_materials": [
+        { "sku": "RM-106", "quantity_used": 180 }
+      ],
+      "status": "In Progress"
+    }
+  ]
+}

@@ -6,6 +6,34 @@
       "credit_limit": 50000,
       "payment_terms": "Net 30",
       "contact_email": "procurement@abcmfg.com"
+    },
+    {
+      "customer_id": "CUST-1002",
+      "name": "XYZ Industries",
+      "credit_limit": 75000,
+      "payment_terms": "Net 45",
+      "contact_email": "orders@xyzindustries.com"
+    },
+    {
+      "customer_id": "CUST-1003",
+      "name": "Global Tech Solutions",
+      "credit_limit": 60000,
+      "payment_terms": "Net 60",
+      "contact_email": "supply@globaltech.com"
+    },
+    {
+      "customer_id": "CUST-1004",
+      "name": "Prime Engineering",
+      "credit_limit": 80000,
+      "payment_terms": "Net 30",
+      "contact_email": "contact@primeeng.com"
+    },
+    {
+      "customer_id": "CUST-1005",
+      "name": "Superior Components Ltd.",
+      "credit_limit": 90000,
+      "payment_terms": "Net 15",
+      "contact_email": "sales@superiorcomp.com"
     }
   ],
   "sales_orders": [
@@ -22,6 +50,27 @@
       "sku": "SKU-501",
       "quantity": 50,
       "status": "Pending"
+    },
+    {
+      "so_number": "SO-2023-003",
+      "customer_id": "CUST-1003",
+      "sku": "SKU-502",
+      "quantity": 200,
+      "status": "Shipped"
+    },
+    {
+      "so_number": "SO-2023-004",
+      "customer_id": "CUST-1004",
+      "sku": "SKU-503",
+      "quantity": 150,
+      "status": "Delivered"
+    },
+    {
+      "so_number": "SO-2023-005",
+      "customer_id": "CUST-1005",
+      "sku": "SKU-504",
+      "quantity": 75,
+      "status": "Cancelled"
     }
   ]
 }

@@ -1,12 +1,39 @@
 {
-    "shipments": [
-      {
-        "dispatch_id": "DISP-789",
-        "so_number": "SO-2023-001",
-        "carrier": "FedEx",
-        "tracking_number": "FDX-987654321",
-        "status": "In Transit"
-      }
-    ]
-  }
-  
+  "shipments": [
+    {
+      "dispatch_id": "DISP-789",
+      "so_number": "SO-2023-001",
+      "carrier": "FedEx",
+      "tracking_number": "FDX-987654321",
+      "status": "In Transit"
+    },
+    {
+      "dispatch_id": "DISP-790",
+      "so_number": "SO-2023-002",
+      "carrier": "UPS",
+      "tracking_number": "UPS-123456789",
+      "status": "Delivered"
+    },
+    {
+      "dispatch_id": "DISP-791",
+      "so_number": "SO-2023-003",
+      "carrier": "DHL",
+      "tracking_number": "DHL-567890123",
+      "status": "Out for Delivery"
+    },
+    {
+      "dispatch_id": "DISP-792",
+      "so_number": "SO-2023-004",
+      "carrier": "BlueDart",
+      "tracking_number": "BDT-345678901",
+      "status": "Pending Pickup"
+    },
+    {
+      "dispatch_id": "DISP-793",
+      "so_number": "SO-2023-005",
+      "carrier": "USPS",
+      "tracking_number": "USPS-678901234",
+      "status": "In Transit"
+    }
+  ]
+}

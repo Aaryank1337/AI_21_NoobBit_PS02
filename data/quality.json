@@ -1,10 +1,29 @@
 {
-    "inspections": [
-      {
-        "inspection_id": "QC-001",
-        "batch_number": "BPC-123",
-        "status": "Passed"
-      }
-    ]
-  }
-  
+  "inspections": [
+    {
+      "inspection_id": "QC-001",
+      "batch_number": "BPC-123",
+      "status": "Passed"
+    },
+    {
+      "inspection_id": "QC-002",
+      "batch_number": "BPC-124",
+      "status": "Failed"
+    },
+    {
+      "inspection_id": "QC-003",
+      "batch_number": "BPC-125",
+      "status": "Pending Review"
+    },
+    {
+      "inspection_id": "QC-004",
+      "batch_number": "BPC-126",
+      "status": "Passed"
+    },
+    {
+      "inspection_id": "QC-005",
+      "batch_number": "BPC-127",
+      "status": "Under Inspection"
+    }
+  ]
+}

@@ -1,15 +1,44 @@
 {
-    "inventory": [
-      {
-        "sku": "SKU-500",
-        "stock_location": "Mumbai",
-        "quantity": 250
-      },
-      {
-        "sku": "RM-100",
-        "stock_location": "Delhi",
-        "quantity": 1000
-      }
-    ]
-  }
-  
+  "inventory": [
+    {
+      "sku": "SKU-500",
+      "stock_location": "Mumbai",
+      "quantity": 250
+    },
+    {
+      "sku": "RM-100",
+      "stock_location": "Delhi",
+      "quantity": 1000
+    },
+    {
+      "sku": "SKU-501",
+      "stock_location": "Bangalore",
+      "quantity": 150
+    },
+    {
+      "sku": "RM-101",
+      "stock_location": "Chennai",
+      "quantity": 800
+    },
+    {
+      "sku": "SKU-502",
+      "stock_location": "Hyderabad",
+      "quantity": 300
+    },
+    {
+      "sku": "RM-102",
+      "stock_location": "Pune",
+      "quantity": 1200
+    },
+    {
+      "sku": "SKU-503",
+      "stock_location": "Ahmedabad",
+      "quantity": 400
+    },
+    {
+      "sku": "RM-103",
+      "stock_location": "Kolkata",
+      "quantity": 700
+    }
+  ]
+}

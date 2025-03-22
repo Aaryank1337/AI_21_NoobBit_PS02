@@ -1,0 +1,99 @@
+[
+    {
+      "_id": "67df18d0a27c1c1656f941d5",
+      "timestamp": "2025-03-20T11:00:00.000+00:00",
+      "user_id": "user10@example.com",
+      "category": "Chatbot",
+      "event": "User Query",
+      "details": {
+        "query": "Show me all shipments dispatched via FedEx"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d1a27c1c1656f941d6",
+      "timestamp": "2025-03-20T11:00:05.000+00:00",
+      "user_id": "user10@example.com",
+      "category": "Chatbot",
+      "event": "Bot Response",
+      "details": {
+        "query": "Show me all shipments dispatched via FedEx",
+        "response": "1 shipment found matching FedEx.",
+        "source": "shipmentsDB"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d2a27c1c1656f941d7",
+      "timestamp": "2025-03-20T12:15:00.000+00:00",
+      "user_id": "user11@example.com",
+      "category": "Chatbot",
+      "event": "User Query",
+      "details": {
+        "query": "Retrieve all purchase orders with status 'Pending Approval'"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d3a27c1c1656f941d8",
+      "timestamp": "2025-03-20T12:15:06.000+00:00",
+      "user_id": "user11@example.com",
+      "category": "Chatbot",
+      "event": "Bot Response",
+      "details": {
+        "query": "Retrieve all purchase orders with status 'Pending Approval'",
+        "response": "2 purchase orders found with 'Pending Approval' status.",
+        "source": "purchaseOrdersDB"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d4a27c1c1656f941d9",
+      "timestamp": "2025-03-20T13:30:00.000+00:00",
+      "user_id": "user12@example.com",
+      "category": "Chatbot",
+      "event": "User Query",
+      "details": {
+        "query": "List all inspections for batch 'BPC-124'"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d5a27c1c1656f941da",
+      "timestamp": "2025-03-20T13:30:07.000+00:00",
+      "user_id": "user12@example.com",
+      "category": "Chatbot",
+      "event": "Bot Response",
+      "details": {
+        "query": "List all inspections for batch 'BPC-124'",
+        "response": "1 inspection record found for batch 'BPC-124' with status 'Failed'.",
+        "source": "inspectionsDB"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d6a27c1c1656f941db",
+      "timestamp": "2025-03-20T14:45:00.000+00:00",
+      "user_id": "user13@example.com",
+      "category": "Chatbot",
+      "event": "User Query",
+      "details": {
+        "query": "Display inventory details for stock location 'Bangalore'"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "67df18d7a27c1c1656f941dc",
+      "timestamp": "2025-03-20T14:45:05.000+00:00",
+      "user_id": "user13@example.com",
+      "category": "Chatbot",
+      "event": "Bot Response",
+      "details": {
+        "query": "Display inventory details for stock location 'Bangalore'",
+        "response": "Inventory details for Bangalore: 150 units of SKU-501 available.",
+        "source": "inventoryDB"
+      },
+      "__v": 0
+    }
+  ]
+  
