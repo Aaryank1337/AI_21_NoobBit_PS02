@@ -11,10 +11,12 @@ import productionRoutes from "./routes/production_routes.js";
 import qualityRoutes from "./routes/quality_routes.js";
 import dispatchRoutes from "./routes/dispatch_routes.js";
 import { issueToken } from "./middleware/authMiddleware.js";
+import whatsappRoutes from "./routes/whatsapp_routes.js"
 
 
 // Initialize Express app
 const app = express();
+app.use(express.urlencoded({ extended: true })); // Required for Twilio
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -41,4 +43,7 @@ app.use("/api/dispatch", dispatchRoutes);
 
 // OAuth2 Token Issuance (For Testing)
 app.get("/auth/token", issueToken);
+
+
+app.use("/api", whatsappRoutes);
 
