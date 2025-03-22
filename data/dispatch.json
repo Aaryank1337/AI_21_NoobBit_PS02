@@ -1,0 +1,12 @@
+{
+    "shipments": [
+      {
+        "dispatch_id": "DISP-789",
+        "so_number": "SO-2023-001",
+        "carrier": "FedEx",
+        "tracking_number": "FDX-987654321",
+        "status": "In Transit"
+      }
+    ]
+  }
+  

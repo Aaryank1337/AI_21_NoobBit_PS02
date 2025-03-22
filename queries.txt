@@ -1,0 +1,24 @@
+Here are some example questions you might try with the bot:
+
+- **Sales Module:**  
+  • "What's the status of my latest sales order?"  
+  • "Can you list all sales orders?"
+
+- **Inventory Check:**  
+  • "Do we have any stock available for SKU-500?"  
+  • "What is the current inventory level for SKU-500 in Mumbai?"
+
+- **Purchase Orders:**  
+  • "What is the status of purchase order PO-2023-005?"  
+  • "Show me all purchase orders."
+
+- **General Queries:**  
+  • "How does IDMS handle tax invoice vs. proforma invoice?"  
+  • "What are the GST compliance features of IDMS ERP?"  
+P
+
+roduction: "What is the status of production batches?"
+
+Quality: "List all quality inspections."
+
+Dispatch: "What's the status of shipments?"

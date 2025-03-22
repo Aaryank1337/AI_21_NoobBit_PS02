@@ -3,8 +3,15 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
-import chatRoutes from "./routes/faq_route.js";
-import KnowledgeBase from "./model/faq_model.js";
+import chatRoutes from "./routes/chat_route.js";
+import salesRoutes from "./routes/sales_routes.js"
+import purchaseRoutes from "./routes/purchase_routes.js";
+import storesRoutes from "./routes/stores_routes.js";
+import productionRoutes from "./routes/production_routes.js";
+import qualityRoutes from "./routes/quality_routes.js";
+import dispatchRoutes from "./routes/dispatch_routes.js";
+import { issueToken } from "./middleware/authMiddleware.js";
+
 
 // Initialize Express app
 const app = express();
@@ -23,9 +30,15 @@ mongoose
   })
   .catch((err) => console.error("MongoDB connection error:", err));
 
+// Routes
 app.use("/api", chatRoutes);
-  
-app.get("/api/test-db", async (req, res) => {
-  const allDocs = await KnowledgeBase.find();
-  res.json(allDocs);
-});
+app.use("/api/sales", salesRoutes);
+app.use("/api/purchase", purchaseRoutes);
+app.use("/api/stores", storesRoutes);
+app.use("/api/production", productionRoutes);
+app.use("/api/quality", qualityRoutes);
+app.use("/api/dispatch", dispatchRoutes);
+
+// OAuth2 Token Issuance (For Testing)
+app.get("/auth/token", issueToken);
+

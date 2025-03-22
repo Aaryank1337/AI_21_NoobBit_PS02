@@ -1,0 +1,12 @@
+{
+    "batch_cards": [
+      {
+        "batch_number": "BPC-123",
+        "raw_materials": [
+          { "sku": "RM-100", "quantity_used": 200 }
+        ],
+        "status": "In Progress"
+      }
+    ]
+  }
+  

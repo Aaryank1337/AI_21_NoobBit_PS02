@@ -1,0 +1,27 @@
+{
+  "customers": [
+    {
+      "customer_id": "CUST-1001",
+      "name": "ABC Manufacturing",
+      "credit_limit": 50000,
+      "payment_terms": "Net 30",
+      "contact_email": "procurement@abcmfg.com"
+    }
+  ],
+  "sales_orders": [
+    {
+      "so_number": "SO-2023-001",
+      "customer_id": "CUST-1001",
+      "sku": "SKU-500",
+      "quantity": 100,
+      "status": "Pending Dispatch"
+    },
+    {
+      "so_number": "SO-2023-002",
+      "customer_id": "CUST-1002",
+      "sku": "SKU-501",
+      "quantity": 50,
+      "status": "Pending"
+    }
+  ]
+}

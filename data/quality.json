@@ -1,0 +1,10 @@
+{
+    "inspections": [
+      {
+        "inspection_id": "QC-001",
+        "batch_number": "BPC-123",
+        "status": "Passed"
+      }
+    ]
+  }
+  

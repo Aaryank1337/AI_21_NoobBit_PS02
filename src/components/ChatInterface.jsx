@@ -3,7 +3,7 @@ import api from '../lib/axios'; // Import the axios instance
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([
-    { type: 'bot', text: "Hello! I'm your IDMS ERP assistant. How can I help you today?" }
+    { type: 'bot', text: "Hello! I'm your DOME: Dynamic Operational Management Engine , Your assistant. How can I help you today?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -63,7 +63,7 @@ const ChatInterface = () => {
   return (
     <div className="chat-container">
       <div className="chat-header">
-        <h2>IDMS ERP Assistant</h2>
+        <h2>DOME</h2>
       </div>
       
       <div className="messages-container">

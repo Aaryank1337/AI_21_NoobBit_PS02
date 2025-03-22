@@ -1,0 +1,15 @@
+{
+    "inventory": [
+      {
+        "sku": "SKU-500",
+        "stock_location": "Mumbai",
+        "quantity": 250
+      },
+      {
+        "sku": "RM-100",
+        "stock_location": "Delhi",
+        "quantity": 1000
+      }
+    ]
+  }
+  
